@@ -11,8 +11,9 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       '--btn-color': theme('colors.black.DEFAULT'),
       '--btn-accent': theme('colors.white.DEFAULT'),
       color: 'var(--btn-color)',
-      fontSize: theme('fontSize.16'),
+      fontSize: theme('fontSize.18'),
       fontWeight: 600,
+      textTransform: 'uppercase',
       textAlign: 'center',
       display: 'flex',
       alignItems: 'center',
@@ -100,6 +101,31 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
       '&-contur': {
         border: '1px solid var(--btn-color)',
       },
+
+      '&-gradient': {
+        '--btn-gradient': `radial-gradient(100% 100% at 50% 0%, ${formatColor({
+          mode: 'rgba',
+          color: parseColor(theme('colors.white.DEFAULT')).color,
+          alpha: 0.2,
+        })} 0%, transparent 73.05%), radial-gradient(537.14% 76.94% at 30.65% 40.18%, rgba(224, 187, 142, 0.70) 0%, transparent 100%), ${theme(
+          'colors.primary.light'
+        )}`,
+        borderBottom: `2px solid ${theme('colors.primary.light')}`,
+        background: 'var(--btn-gradient)',
+        boxShadow: `0 10px 30px 0 ${formatColor({
+          mode: 'rgba',
+          color: parseColor(theme('colors.primary.light')).color,
+          alpha: 0.7,
+        })}`,
+
+        '&:active': {
+          boxShadow: `0 10px 30px 0 ${formatColor({
+            mode: 'rgba',
+            color: parseColor(theme('colors.primary.light')).color,
+            alpha: 0.9,
+          })}`,
+        },
+      },
     },
   })
 
@@ -132,7 +158,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
     {
       btn: (size) => {
         return {
-          borderRadius: '6px',
+          borderRadius: '4px',
           height: size,
           paddingInline: `calc(${size} / 2)`,
         }

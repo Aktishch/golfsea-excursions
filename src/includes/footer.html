@@ -1,24 +1,33 @@
-<!-- Карта -->
-
-<section class="container container-distance relative bg-grey dark:bg-dark overflow-hidden h-96">
-  <%= loader %>
-  <div class="absolute inset-0 overflow-hidden" id="yandex-map"></div>
-</section>
-
+<% if (data.status) { %>
 <!-- Подвал -->
 
-<footer class="container flex flex-wrap flex-col md:flex-row items-center justify-between gap-4 bg-black text-second pt-4 pb-10 md:pb-4" id="footer">
-  <a class="btn btn-white w-36" data-waved="light" href="/">
-    <%= picture({src: 'img/pictures/logo', format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
-  </a>
-  <address class="text-center text-16 leading-4">​Рождественская набережная, <br> 45/1​5 офис; 3 этаж</address>
-  <span class="btn btn-second text-18 w-max p-1" data-waved="light" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Privacy policy</span>
-  <span class="text-18">
-    Разработка: <a class="underline w-max" href="https://stdkit.ru/" target="_blank">Студия К.И.Т.</a>
-  </span>
+<footer class="container container-xs flex md:flex-wrap flex-col md:flex-row md:items-center md:justify-between gap-4 sm:gap-7 pt-2 md:pt-3 pb-6 md:pb-3">
+  <div class="flex items-center gap-4 sm:gap-7">
+    <a class="btn w-24" data-waved="dark" href="/">
+      <%= picture({src: 'img/pictures/logo-gold', format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
+    </a>
+    <p class="font-semibold text-16 leading-2">Геленджик <br> Гольф Резорт</p>
+  </div>
+  <div class="flex flex-col items-start">
+    <span class="font-normal text-18 leading-1">г. Геленджик, Стартовая, 1</span>
+    <a class="btn btn-black text-18" data-waved="dark" href="tel: 8 (988) 320-04-78">8 (988) 320-04-78</a>
+  </div>
+  <div class="flex flex-col items-start gap-2">
+    <a class="btn btn-primary text-16 normal-case" data-waved="dark" href="" target="_blank">
+      <%= icon({id: 'world'}) %>
+      <span class="font-normal text-black border-b border-dashed border-black border-opacity-40 ml-2">Гольф-клуб</span>
+    </a>
+    <a class="btn btn-primary text-16 normal-case" data-waved="dark" href="" target="_blank">
+      <%= icon({id: 'world'}) %>
+      <span class="font-normal text-black border-b border-dashed border-black border-opacity-40 ml-2">Ресторан CLUB HOUSE</span>
+    </a>
+  </div>
+  <div class="flex flex-col items-start">
+    <span class="font-normal text-18 leading-1">Разработка сайта:</span>
+    <a class="btn btn-black normal-case text-18" data-waved="dark" href="https://stdkit.ru/" target="_blank">Студия К.И.Т.</a>
+  </div>
 </footer>
-
-</div>
+<% } %>
 
 </body>
 

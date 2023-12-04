@@ -3,8 +3,6 @@
 module.exports = {
   content: ['./src/**/*.html', './src/ts/**/*.ts'],
 
-  darkMode: 'class',
-
   corePlugins: {
     container: false,
   },
@@ -25,7 +23,8 @@ module.exports = {
 
     colors: {
       primary: {
-        DEFAULT: '#af1a4c',
+        DEFAULT: '#ECB050',
+        light: '#BF8F54',
       },
 
       second: {
@@ -33,31 +32,23 @@ module.exports = {
       },
 
       black: {
-        DEFAULT: '#000000',
+        DEFAULT: '#1E1E1E',
       },
 
       white: {
-        DEFAULT: '#ffffff',
+        DEFAULT: '#FFFFFF',
       },
 
       gray: {
-        DEFAULT: '#b2b2b2',
+        DEFAULT: '#0C141E',
       },
 
       grey: {
-        DEFAULT: '#f6f7f9',
-      },
-
-      dark: {
-        DEFAULT: '#303030',
+        DEFAULT: '#EFEFEF',
       },
 
       red: {
-        DEFAULT: '#be1b1b',
-      },
-
-      green: {
-        DEFAULT: '#27ae60',
+        DEFAULT: '#DC6464',
       },
     },
 
@@ -172,6 +163,7 @@ module.exports = {
         46: '2.875rem',
         48: '3rem',
         50: '3.125rem',
+        title: '3.875rem',
       },
 
       borderColor: {
@@ -214,8 +206,8 @@ module.exports = {
     size: {
       xs: '28px',
       sm: '36px',
-      md: '40px',
-      lg: '45px',
+      md: '42px',
+      lg: '48px',
       xl: '56px',
       xxl: '64px',
     },
@@ -224,13 +216,13 @@ module.exports = {
   plugins: [
     require('./plugins/container'),
     require('./plugins/dialog'),
-    require('./plugins/card'),
+    // require('./plugins/card'),
     require('./plugins/pack'),
     require('./plugins/picture'),
     require('./plugins/form'),
     require('./plugins/input'),
     require('./plugins/button'),
-    require('./plugins/switch'),
+    // require('./plugins/switch'),
     require('./plugins/animation'),
   ],
 }

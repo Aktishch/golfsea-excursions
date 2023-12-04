@@ -1,0 +1,97 @@
+<section class="container relative bg-gray overflow-hidden">
+  <div class="absolute inset-0">
+    <div class="absolute -top-80 <%= reserve.children ? '-left-[15%] -scale-x-100' : '-right-[70%]' %> opacity-50">
+      <span class="text-primary-light text-[120rem] animate-pulse">
+        <%= icon({id: 'lines'}) %>
+      </span>
+    </div>
+  </div>
+  <div class="relative text-white">
+    <h2 class="font-alt font-normal uppercase text-center text-32 md:text-40 lg:text-48 leading-3 mb-4 md:mb-7 ease-in-out duration-4 anim anim-up" data-anim="hidden">Записаться на ближайшую дату</h2>
+    <h3 class="font-normal text-center text-14 sm:text-16 leading-3 mb-7 lg:mb-12 ease-in-out duration-4 anim anim-up" data-anim="hidden">Экскурсия <%= reserve.excursion %></h3>
+    <div class="grid grid-cols-1 lg:grid-cols-2 text-black">
+      <div class="order-2 lg:order-1 relative z-1 w-full max-w-[500px] md:max-w-[600px] lg:max-w-full -mt-10 lg:mt-0 mx-auto lg:mx-0 ease-in-out duration-4 anim anim-right" data-anim="hidden">
+        <div class="bg-white h-full py-6 md:py-10 px-4 xs:px-7 xl:px-10">
+          <form class="form mb-5" data-form="submit">
+            <input type="hidden" value="Экскурсия <%= reserve.excursion %>" name="theme">
+            <div class="grid grid-cols-1 xs:grid-cols-2 gap-5 mb-7">
+              <label class="xs:col-2 form-label" data-label="input">
+                <span class="font-semibold text-16 leading-1 mb-3">Ваше имя</span>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-black input-lg" data-input="name" type="text" placeholder="Напишите имя..." name="name">
+                  </div>
+                  <span class="form-error" data-error>Пожалуйста, введите ваше имя!</span>
+                </div>
+              </label>
+              <label class="xs:col-2 form-label" data-label="input">
+                <span class="font-semibold text-16 leading-1 mb-3">Ваш телефон</span>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-black input-lg" data-input="tel" type="tel" placeholder="+ 7 (_ _ _) _ _ _ - _ _ - _ _" name="tel">
+                  </div>
+                  <span class="form-error" data-error>Пожалуйста, введите ваш номер!</span>
+                </div>
+              </label>
+              <label class="xs:col-2 form-label" data-label="input">
+                <span class="font-semibold text-16 leading-1 mb-3">Дата</span>
+                <div class="form-wrapper">
+                  <div class="input-cover">
+                    <input class="input input-black input-lg" data-input="calendar" type="text" placeholder="_ _._ _._ _ _ _" name="date">
+                  </div>
+                  <div class="form-icon form-icon-right text-24 opacity-40">
+                    <%= icon({id: 'calendar'}) %>
+                  </div>
+                  <span class="form-error" data-error>Пожалуйста, укажите дату!</span>
+                </div>
+              </label>
+              <% if (reserve.children) { %>
+              <div class="flex flex-col">
+                <span class="font-semibold text-16 leading-1 mb-3">Взрослые</span>
+                <div class="quantity" data-quantity>
+                  <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-decrease data-waved="dark" type="button">-</button>
+                  <div class="quantity-cover input-cover">
+                    <input class="quantity-input input" data-input="number" type="text" value="1" maxlength="3" name="quantity">
+                  </div>
+                  <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-increase data-waved="dark" type="button">+</button>
+                </div>
+              </div>
+              <div class="flex flex-col">
+                <span class="font-semibold text-16 leading-1 mb-3">Дети (от 3 до 14 лет)</span>
+                <div class="quantity" data-quantity>
+                  <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-decrease data-waved="dark" type="button">-</button>
+                  <div class="quantity-cover input-cover">
+                    <input class="quantity-input input" data-input="number" type="text" value="1" maxlength="3" name="quantity">
+                  </div>
+                  <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-increase data-waved="dark" type="button">+</button>
+                </div>
+              </div>
+              <% } else { %>
+              <div class="xs:col-2 flex flex-col xs:flex-row xs:items-center xs:justify-between xs:gap-3 xs:bg-grey xs:rounded-1 xs:py-2 xs:px-4">
+                <span class="font-semibold text-16 leading-1 mb-3 xs:mb-0">Количество человек</span>
+                <div class="quantity w-full xs:max-w-[235px]" data-quantity>
+                  <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-decrease data-waved="dark" type="button">-</button>
+                  <div class="quantity-cover input-cover">
+                    <input class="quantity-input input" data-input="number" type="text" value="1" maxlength="3" name="quantity">
+                  </div>
+                  <button class="quantity-btn btn btn-grey btn-fill text-black" data-quantity-increase data-waved="dark" type="button">+</button>
+                </div>
+              </div>
+              <% } %>
+            </div>
+            <button class="btn btn-primary btn-lg btn-fill btn-gradient btn-glow w-full xs:w-max" data-waved="dark" type="submit">отправить заявку</button>
+          </form>
+          <div class="flex">
+            <div class="hover:underline underline-offset-4 font-normal text-10 leading-3 opacity-80 cursor-pointer" data-fancybox-dialog data-type="ajax" data-src="dialogs/dialog-politics.html">Отправляя форму, Вы даете согласие на обработку Ваших персональных данных</div>
+          </div>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 relative ease-in-out duration-4 anim anim-left" data-anim="hidden">
+        <div class="pack pack-rect-md md:pack-rect-sm bg-grey h-full -mx-4 sm:mx-0">
+          <%= loader %>
+          <%= picture({src: reserve.image, format: '.jpg', webp: true, classes: 'image', data: false, loading: 'lazy'}) %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

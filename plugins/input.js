@@ -6,7 +6,7 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
     '.input-cover': {
       display: 'flex',
       width: '100%',
-      '--input-radius': '8px',
+      '--input-radius': '4px',
 
       '& .input': {
         flexGrow: 1,
