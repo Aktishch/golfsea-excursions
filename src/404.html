@@ -1,0 +1,29 @@
+<%
+  var data = {
+    title: '404',
+    status: false
+  }
+
+  var icon = _.template(require('./components/icon.html').default)
+  var picture = _.template(require('./components/picture.html').default)
+  var loader = _.template(require('./components/loader.html').default)({icon: icon({id: 'loader'})})
+  var preloader = require('./components/preloader.html').default
+  var header = _.template(require('./includes/header.html').default)
+  var excursions = _.template(require('./includes/excursions.html').default)
+  var reserves = _.template(require('./includes/reserves.html').default)
+  var footer = _.template(require('./includes/footer.html').default)
+%>
+
+<%= header({data, loader, preloader, icon, picture}) %>
+
+<!-- Главный блок -->
+
+<main class="main container flex flex-col items-center justify-center min-h-screen">
+  <%= picture({src: 'img/pictures/404', format: '.svg', webp: false, classes: 'block w-full max-w-[575px] mb-7 sm:mb-11 lg:mb-16', data: false, loading: 'eager'}) %>
+  <p class="font-normal text-center text-14 sm:text-16 leading-4 mb-5 sm:mb-10 lg:mb-14">
+    Возможно, запрашиваемая вами страница была перенесена или удалена
+  </p>
+  <a class="btn btn-primary btn-lg btn-fill btn-gradient btn-glow" data-waved="dark" href="/">на главную</a>
+</main>
+
+<%= footer({data, icon, picture}) %>
