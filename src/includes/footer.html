@@ -1,30 +1,60 @@
 <% if (data.status) { %>
 <!-- Подвал -->
 
-<footer class="container container-xs flex md:flex-wrap flex-col md:flex-row md:items-center md:justify-between gap-4 sm:gap-7 pt-2 md:pt-3 pb-6 md:pb-3">
-  <div class="flex items-center gap-4 sm:gap-7">
-    <a class="btn w-24" data-waved="dark" href="/">
+<footer class="container flex flex-wrap justify-between gap-7 py-5 lg:py-10">
+  <div class="flex flex-col items-start">
+    <a class="btn w-64 mb-4" data-waved="dark" href="/">
       <%= picture({src: 'img/pictures/logo-gold', format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
     </a>
-    <p class="font-semibold text-16 leading-2">Геленджик <br> Гольф Резорт</p>
+    <p class="font-normal text-12 leading-3 opacity-60 mb-4">© Гольф-Клуб «Геленджик Гольф Резорт» 2019-2023</p>
+    <div class="flex items-center gap-3">
+      <a class="btn btn-white rounded-max" data-waved="light" href="" target="_blank">
+        <%= picture({src: 'img/pictures/tg', format: '.svg', webp: false, classes: 'icon text-28', data: false, loading: 'auto'}) %>
+      </a>
+      <a class="btn btn-white rounded-4" data-waved="light" href="" target="_blank">
+        <%= picture({src: 'img/pictures/vk', format: '.svg', webp: false, classes: 'icon text-28', data: false, loading: 'auto'}) %>
+      </a>
+    </div>
   </div>
   <div class="flex flex-col items-start">
-    <span class="font-normal text-18 leading-1">г. Геленджик, Стартовая, 1</span>
-    <a class="btn btn-black text-18" data-waved="dark" href="tel: 8 (988) 320-04-78">8 (988) 320-04-78</a>
+    <div class="flex items-center mb-3">
+      <span class="text-20 opacity-40 mr-2">
+        <%= icon({id: 'geo'}) %>
+      </span>
+      <span class="font-normal text-14 sm:text-16 leading-1">г. Геленджик, р-н Голубая бухта, Стартовая, 1</span>
+    </div>
+    <a class="btn btn-white text-black hover:underline underline-offset-4 mb-3" data-waved="dark" href="tel: 8 (988) 320-04-78">
+      <span class="text-20 opacity-40 mr-2">
+        <%= icon({id: 'phone'}) %>
+      </span>
+      <b class="text-18 sm:text-20 leading-1">8 (988) 320-04-78</b>
+    </a>
+    <a class="btn btn-white text-black hover:underline underline-offset-4 mb-3" data-waved="dark" href="mailto: info@golfsea.ru">
+      <span class="text-20 opacity-40 mr-2">
+        <%= icon({id: 'email'}) %>
+      </span>
+      <span class="normal-case font-normal text-14 sm:text-16 leading-1">info@golfsea.ru</span>
+    </a>
+    <div class="flex items-center mt-auto">
+      <span class="text-20 opacity-40 mr-2">
+        <%= icon({id: 'clock'}) %>
+      </span>
+      <span class="font-normal text-14 sm:text-16 leading-1">Часы работы: с 9:00 до 19:00</span>
+    </div>
   </div>
-  <div class="flex flex-col items-start gap-2">
-    <a class="btn btn-primary text-16 normal-case" data-waved="dark" href="" target="_blank">
+  <div class="flex flex-col items-start">
+    <a class="btn btn-primary text-16 normal-case mb-2" data-waved="dark" href="" target="_blank">
       <%= icon({id: 'world'}) %>
       <span class="font-normal text-black border-b border-dashed border-black border-opacity-40 ml-2">Гольф-клуб</span>
     </a>
-    <a class="btn btn-primary text-16 normal-case" data-waved="dark" href="" target="_blank">
+    <a class="btn btn-primary text-16 normal-case mb-5" data-waved="dark" href="" target="_blank">
       <%= icon({id: 'world'}) %>
       <span class="font-normal text-black border-b border-dashed border-black border-opacity-40 ml-2">Ресторан CLUB HOUSE</span>
     </a>
-  </div>
-  <div class="flex flex-col items-start">
-    <span class="font-normal text-18 leading-1">Разработка сайта:</span>
-    <a class="btn btn-black normal-case text-18" data-waved="dark" href="https://stdkit.ru/" target="_blank">Студия К.И.Т.</a>
+    <div class="flex flex-col items-start mt-auto">
+      <span class="font-normal text-16 leading-1">Разработка сайта:</span>
+      <a class="btn btn-black normal-case text-16" data-waved="dark" href="https://stdkit.ru/" target="_blank">Студия К.И.Т.</a>
+    </div>
   </div>
 </footer>
 <% } %>

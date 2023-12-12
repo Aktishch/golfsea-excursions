@@ -28,13 +28,17 @@
   <!-- Шапка документа -->
 
   <header class="container flex items-center justify-between gap-5 fixed z-3 top-0 left-0 right-0 bg-opacity-50 text-white py-2 md:py-4 duration-3" data-header>
-    <div class="hidden lg:block font-normal text-24 leading-2">г. Геленджик, Стартовая, 1</div>
+    <div class="hidden lg:flex flex-col items-start">
+      <span class="font-semibold text-18 leading-1 mb-1">г. Геленджик,</span>
+      <span class="font-normal text-18 leading-1">р-н Голубая бухта, Стартовая, 1</span>
+    </div>
     <a class="btn w-24 md:w-40" data-header-logo data-waved="light" href="/">
       <%= picture({src: 'img/pictures/logo-white', format: '.png', webp: true, classes: 'w-full', data: false, loading: 'auto'}) %>
     </a>
     <div class="flex flex-col items-start">
-      <a class="btn btn-white text-18 md:text-24" data-waved="light" href="tel: 8 (988) 320-04-78">8 (988) 320-04-78</a>
-      <a class="btn btn-white text-14 md:text-18 border-b border-dashed border-inherit border-opacity-40" data-waved="light" href="" target="_blank">задать вопрос</a>
+      <a class="btn btn-white text-16 md:text-18" data-waved="light" href="tel: 8 (988) 320-04-78">8 (988) 320-04-78</a>
+      <a class="btn btn-white text-16 md:text-18 md:mb-2" data-waved="light" href="tel: 8 (988) 320-04-78">8 (988) 320-04-78</a>
+      <a class="btn btn-white text-12 md:text-16 border-b border-dashed border-inherit border-opacity-40" data-waved="light" href="" target="_blank">задать вопрос</a>
     </div>
   </header>
   <% } %>
