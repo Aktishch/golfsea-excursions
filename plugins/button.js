@@ -112,19 +112,6 @@ module.exports = plugin(({ addComponents, matchComponents, theme }) => {
         )}`,
         borderBottom: `2px solid ${theme('colors.primary.light')}`,
         background: 'var(--btn-gradient)',
-        boxShadow: `0 10px 30px 0 ${formatColor({
-          mode: 'rgba',
-          color: parseColor(theme('colors.primary.light')).color,
-          alpha: 0.7,
-        })}`,
-
-        '&:active': {
-          boxShadow: `0 10px 30px 0 ${formatColor({
-            mode: 'rgba',
-            color: parseColor(theme('colors.primary.light')).color,
-            alpha: 0.9,
-          })}`,
-        },
       },
     },
   })
